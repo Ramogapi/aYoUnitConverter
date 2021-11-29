@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace aYo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "aYo", Version = "v1", Description = "aYo Converter" });
+            });
+
             var connection = Configuration["ConnectionString"];
             services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(connection, b =>
             {
@@ -61,6 +67,12 @@ namespace aYo
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x =>
+            {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "aYo.Assessment");
+            });
 
             app.UseEndpoints(endpoints =>
             {
