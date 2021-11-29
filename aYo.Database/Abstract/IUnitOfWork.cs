@@ -7,11 +7,7 @@ namespace aYo.Database.Abstract
 {
     public interface IUnitOfWork
     {
-        Task RollBackAsync();
-        Task<int> CommitAsync();
         IRepository<T> Repository<T>() where T : class, new();
-        Task DisposeAsync();
         IDbContext Context();
-        bool HasChanges();
     }
 }

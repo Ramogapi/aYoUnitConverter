@@ -34,15 +34,5 @@ namespace aYo.Database.Storage
         {
             return base.Set<T>();
         }
-
-        public void RollBack()
-        {
-            base.Database.RollbackTransaction();
-        }
-
-        public bool HasChanges()
-        {
-            return ChangeTracker.HasChanges();
-        }
     }
 }
