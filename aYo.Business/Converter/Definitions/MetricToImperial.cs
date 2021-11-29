@@ -23,7 +23,7 @@ namespace aYo.Business.Converter.Definitions
         {
             var metric = await _metricRateRepository.GetByFirstOrDefaultAsync(i => i.ImperialId == imperialId && i.MetricId == metricId);
             if (metric == null) throw new NullReferenceException();
-            var result = metric.Value / input;
+            var result = input / metric.Value;
             return result;
         }
     }
