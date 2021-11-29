@@ -1,0 +1,45 @@
+use aYoUnitsConverter
+
+--insert into dbo.Imperial(Description, Created, Updated)
+--values('Inch', getdate(), getdate())
+--insert into dbo.Imperial(Description, Created, Updated)
+--values('Foot', getdate(), getdate())
+--insert into dbo.Imperial(Description, Created, Updated)
+--values('Yard', getdate(), getdate())
+--insert into dbo.Imperial(Description, Created, Updated)
+--values('Mile', getdate(), getdate())
+
+select * from dbo.Imperial
+
+--insert into dbo.Metric(Description, Created, Updated)
+--values('Millimeter', getdate(), getdate())
+--insert into dbo.Metric(Description, Created, Updated)
+--values('Centimeter', getdate(), getdate())
+--insert into dbo.Metric(Description, Created, Updated)
+--values('Meter', getdate(), getdate())
+--insert into dbo.Metric(Description, Created, Updated)
+--values('Kilometer', getdate(), getdate())
+
+select * from dbo.Metric
+
+--insert into Rate.ImperialRate(ImperialId, Value, MetricId, Created, Updated)
+--values(1, 25.4, 1, getdate(), getdate())
+--insert into Rate.ImperialRate(ImperialId, Value, MetricId, Created, Updated)
+--values(2, 30.48, 2, getdate(), getdate())
+--insert into Rate.ImperialRate(ImperialId, Value, MetricId, Created, Updated)
+--values(3, 0.9144, 3, getdate(), getdate())
+--insert into Rate.ImperialRate(ImperialId, Value, MetricId, Created, Updated)
+--values(4, 1.609, 4, getdate(), getdate())
+
+select * from Rate.ImperialRate
+
+--insert into Rate.MetricRate(MetricId, Value, ImperialId, Created, Updated)
+--values(1, 1.61, 1, getdate(), getdate())
+--insert into Rate.MetricRate(MetricId, Value, ImperialId, Created, Updated)
+--values(2, 0.91, 2, getdate(), getdate())
+--insert into Rate.MetricRate(MetricId, Value, ImperialId, Created, Updated)
+--values(3, 30.48, 3, getdate(), getdate())
+--insert into Rate.MetricRate(MetricId, Value, ImperialId, Created, Updated)
+--values(4, 25.40, 4, getdate(), getdate())
+
+select * from Rate.MetricRate
