@@ -19,14 +19,14 @@ namespace aYo.Controllers
             _metricToImperial = metricToImperial;
         }
 
-        [HttpGet("GetImperialToMetric")]
+        [HttpGet("ConvertImperialToMetric")]
         public async Task<IActionResult> ImperialToMetric(int imperialId, int metricId, decimal input)
         {
             var result = await _imperialToMetric.Calculate(imperialId, metricId, input);
             return Ok(result);
         }
 
-        [HttpGet("GetMetricToImperial")]
+        [HttpGet("ConvertMetricToImperial")]
         public async Task<IActionResult> MetricToImperial(int metricId, int imperialId, decimal input)
         {
             var result = await _metricToImperial.Calculate(metricId, imperialId, input);

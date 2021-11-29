@@ -20,7 +20,7 @@ namespace aYo.Analysis
                 var result = await _serviceProvider.GetService<IImperialToMetric>().Calculate(1, 1, 3);
                 Assert.True(result > 0);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Assert.True(false);
             }
@@ -31,12 +31,12 @@ namespace aYo.Analysis
         {
             try
             {
-                var result = await _serviceProvider.GetService<IImperialToMetric>().Calculate(0, 1, 3);
-                Assert.True(result > 0);
-            }
-            catch (Exception e)
-            {
+                await _serviceProvider.GetService<IImperialToMetric>().Calculate(0, 1, 3);
                 Assert.True(false);
+            }
+            catch (Exception)
+            {
+                Assert.True(true);
             }
         }
     }

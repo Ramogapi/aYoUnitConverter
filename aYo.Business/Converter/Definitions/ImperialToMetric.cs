@@ -11,11 +11,9 @@ namespace aYo.Business.Converter.Definitions
 {
     public class ImperialToMetric: IImperialToMetric
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<ImperialRate> _imperialRateRepository;
         public ImperialToMetric(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = unitOfWork;
             _imperialRateRepository = unitOfWork.Repository<ImperialRate>();
         }
 
